@@ -13,12 +13,15 @@ const GlobalStyle = createGlobalStyle`
 
   body.fontLoaded {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #fff;
   }
 
   #app {
-    background-color: #fafafa;
+    padding: 4vh;
     min-height: 100%;
     min-width: 100%;
+    background: radial-gradient(ellipse at center, #ffbe0f 0%, #ffbe0f 40%, #FE7884 100%);
+    position: relative;
   }
 
   p,
