@@ -18,6 +18,7 @@ import { changeDate } from './actions';
 import makeSelectDate from './selectors';
 import reducer from './reducer';
 import 'react-datepicker/dist/react-datepicker.css';
+import './custom-datepicker.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export class DateContainer extends React.PureComponent {

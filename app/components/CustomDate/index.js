@@ -10,6 +10,13 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   font-weight: 600;
+  cursor: pointer;
+  outline-color: red;
+  padding: 4px 10px;
+  &:hover,
+  &:focus {
+    color: #f1f1f1;
+  }
 `;
 
 class CustomDate extends React.PureComponent {
