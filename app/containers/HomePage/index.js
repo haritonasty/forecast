@@ -12,6 +12,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../../components/Header';
+import CitiesContainer from '../CitiesContainer';
 
 const StyledHeader = styled(Header)``;
 
@@ -46,7 +47,7 @@ export default class HomePage extends React.PureComponent {
     return (
       <Wrapper>
         <StyledHeader />
-        <StyledCities />
+        <CitiesContainer />
         <StyledMain />
       </Wrapper>
     );
