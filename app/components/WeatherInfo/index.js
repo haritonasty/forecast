@@ -1,0 +1,84 @@
+/**
+ *
+ * WeatherInfo
+ *
+ */
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { fontSize } from '../../utils/style';
+import HumidityIcon from '../HumidityIcon';
+import PrecipitationIcon from '../PrecipitationIcon';
+import WindIcon from '../WindIcon';
+
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const Item = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+const Name = styled.span`
+  font-size: ${fontSize.small}px;
+`;
+
+const Value = styled.span`
+  font-size: ${fontSize.medium}px;
+`;
+
+const WrapperIcon = styled.div`
+  width: 40px;
+  height: 40px;
+  margin: 20px 0;
+`;
+
+function WeatherInfo({ info }) {
+  return (
+    <List>
+      <Item>
+        <Name>Humidity</Name>
+        <WrapperIcon>
+          <HumidityIcon />
+        </WrapperIcon>
+        <Value>{info.humidity}%</Value>
+      </Item>
+      <Item>
+        <Name>Wind</Name>
+        <WrapperIcon>
+          <WindIcon />
+        </WrapperIcon>
+        <Value>
+          {info.wind}
+          m/s
+        </Value>
+      </Item>
+      <Item>
+        <Name>Precipitation</Name>
+        <WrapperIcon>
+          <PrecipitationIcon />
+        </WrapperIcon>
+        <Value>
+          {info.precipitation}
+          mm
+        </Value>
+      </Item>
+    </List>
+  );
+}
+
+WeatherInfo.propTypes = {
+  info: PropTypes.object,
+};
+
+export default WeatherInfo;

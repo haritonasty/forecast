@@ -12,17 +12,19 @@ const selectCity = state => state.get('cities', initialState);
  */
 
 /**
- * Default selector used by CitiesContainer
+ * Default selector used by SearchCitiesContainer
  */
 
 const selectCitiesList = () =>
   createSelector(selectCity, cities => cities.get('citiesList').toJS());
 
-const selectFoundCity = () =>
-  createSelector(selectCity, citiesState => citiesState.get('address'));
-
 const selectCurrCity = () =>
   createSelector(selectCity, citiesState => citiesState.get('currentCity'));
 
+const selectCurrCityInfo = id =>
+  createSelector(selectCity, citiesState =>
+    citiesState.getIn(['citiesList', id]).toJS(),
+  );
+
 export default selectCity;
-export { selectCitiesList, selectFoundCity, selectCurrCity };
+export { selectCitiesList, selectCurrCity, selectCurrCityInfo };

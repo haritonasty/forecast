@@ -2,9 +2,9 @@
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import { CitiesContainer } from '../index';
+// import Weather from '../index';
 
-describe('<CitiesContainer />', () => {
+describe('<Weather />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });
