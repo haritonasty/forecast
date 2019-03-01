@@ -5,9 +5,10 @@
  */
 
 import { fromJS } from 'immutable';
+import { subDays } from 'date-fns';
 import { CHANGE_DATE } from './constants';
 
-export const initialState = fromJS({ date: new Date() });
+export const initialState = fromJS({ date: subDays(new Date(), 1) });
 
 function dateReducer(state = initialState, action) {
   switch (action.type) {

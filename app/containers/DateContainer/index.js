@@ -13,6 +13,7 @@ import { compose } from 'redux';
 import injectReducer from 'utils/injectReducer';
 import DatePicker from 'react-datepicker';
 import format from 'date-fns/format';
+import { subDays } from 'date-fns';
 import CustomDate from '../../components/CustomDate';
 import { changeDate } from './actions';
 import makeSelectDate from './selectors';
@@ -33,6 +34,8 @@ export class DateContainer extends React.PureComponent {
         selected={this.props.date}
         onChange={this.props.onChange}
         dropdownMode="scroll"
+        minDate={subDays(new Date(), 31)}
+        maxDate={subDays(new Date(), 1)}
       />
     );
   }

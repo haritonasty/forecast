@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { colorTheme } from './utils/style';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -13,15 +14,19 @@ const GlobalStyle = createGlobalStyle`
 
   body.fontLoaded {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #fff;
+    color: ${colorTheme.base};
+    min-width: 760px;
   }
 
   #app {
-    padding: 4vh;
     min-height: 100%;
     min-width: 100%;
-    background: radial-gradient(ellipse at center, #ffbe0f 0%, #ffbe0f 40%, #FE7884 100%);
     position: relative;
+    background: #F78167;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(150deg, #FCA5F1 0%, #FC7D7B 100%);
   }
 
   p,

@@ -12,31 +12,54 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from '../../components/Header';
+import { colorTheme } from '../../utils/style';
+import SearchCitiesContainer from '../SearchCitiesContainer';
+import WeatherContainer from '../WeatherContainer';
+import CitiesList from '../CitiesList';
 
 const StyledHeader = styled(Header)``;
 
-const StyledCities = styled.div``;
+const SideBar = styled.div``;
 
-const StyledMain = styled.div``;
+const Main = styled.div``;
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-areas: 'header header' 'cities main';
-  height: 92vh;
-  grid-template-columns: 50% 50%;
+  grid-template-areas: 'sidebar header' 'sidebar main';
+  height: 600px;
+  width: 700px;
+  border-radius: 20px;
+  overflow: hidden;
+  grid-template-columns: 60% 40%;
   grid-template-rows: auto 1fr;
+  background: linear-gradient(150deg, #f3548a 20%, #f78167 100%);
+  box-shadow: -9px 13px 84px 0 rgba(92, 91, 94, 0.5);
+
   ${StyledHeader} {
     grid-area: header;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
   }
 
-  ${StyledCities} {
-    grid-area: cities;
-    padding: 20px;
+  ${SideBar} {
+    grid-area: sidebar;
+    padding: 20px 50px 40px 50px;
+    background: ${colorTheme.base};
+    color: ${colorTheme.baseInvert};
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
   }
 
-  ${StyledMain} {
+  ${Main} {
     grid-area: main;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-end;
   }
 `;
 
@@ -45,9 +68,14 @@ export default class HomePage extends React.PureComponent {
   render() {
     return (
       <Wrapper>
+        <SideBar>
+          <SearchCitiesContainer />
+          <CitiesList />
+        </SideBar>
         <StyledHeader />
-        <StyledCities />
-        <StyledMain />
+        <Main>
+          <WeatherContainer />
+        </Main>
       </Wrapper>
     );
   }

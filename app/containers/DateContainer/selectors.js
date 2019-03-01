@@ -11,7 +11,7 @@ const selectDate = state => state.get('date', initialState);
  * Other specific selectors
  */
 
-/**
+/*
  * Default selector used by DateContainer
  */
 
