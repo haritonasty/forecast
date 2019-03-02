@@ -7,15 +7,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { fontSize } from '../../utils/style';
-import Loader from '../Loader';
 
-const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  position: relative;
-`;
+import { fontSize } from '../../utils/style';
+
+import Loader from '../Loader';
 
 const Temperature = styled.span`
   margin: 0;
@@ -36,6 +31,13 @@ const StyledLoader = styled(Loader)`
   left: 0;
   right: 0;
   display: ${p => (p.show ? 'flex' : 'none')};
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  position: relative;
 `;
 
 function Weather({ city, temp, className, isLoading }) {

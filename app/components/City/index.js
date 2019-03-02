@@ -10,39 +10,39 @@ import styled from 'styled-components';
 
 import { colorTheme, fontSize } from '../../utils/style';
 
-const StyledCity = styled.button`
+const StyledCity = styled.span`
   display: block;
   width: 100%;
-  margin: 5px 0 5px 10px;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
   font-size: ${fontSize.small}px;
-  outline: none;
+  padding: 5px 10px;
 `;
-const DeleteButton = styled.button`
+
+const DeleteButton = styled.span`
   background: none;
   border: none;
   cursor: pointer;
 `;
 
-const Div = styled.div`
+const Wrapper = styled.button`
+  outline-color: ${colorTheme.primary};
   display: flex;
+  align-items: center;
   width: 100%;
   transition: all 0.3s;
   border-radius: 2px;
-  background-color: ${props =>
-    props.current ? colorTheme.primary : colorTheme.base};
-  color: ${props => (props.current ? colorTheme.base : colorTheme.baseInvert)};
+  background-color: ${p => (p.curr ? colorTheme.primary : colorTheme.base)};
+  color: ${p => (p.curr ? colorTheme.base : colorTheme.baseInvert)};
   &:hover {
-    background-color: ${props =>
-      props.current ? colorTheme.primary : colorTheme.border};
+    background-color: ${p => (p.curr ? colorTheme.primary : colorTheme.border)};
   }
 
   &:hover,
   &:focus ${StyledCity} {
-    color: ${props => (props.current ? colorTheme.base : colorTheme.primary)};
+    color: ${p => (p.curr ? colorTheme.base : colorTheme.primary)};
   }
   ${DeleteButton} {
     visibility: hidden;
@@ -54,7 +54,7 @@ const Div = styled.div`
 
 function City({ value, onChangeCity, onRemoveCity, isCurrent }) {
   return (
-    <Div current={isCurrent}>
+    <Wrapper curr={isCurrent}>
       <StyledCity onClick={onChangeCity} title="Show weather">
         {value}
       </StyledCity>
@@ -63,7 +63,7 @@ function City({ value, onChangeCity, onRemoveCity, isCurrent }) {
           &#10005;
         </DeleteButton>
       )}
-    </Div>
+    </Wrapper>
   );
 }
 

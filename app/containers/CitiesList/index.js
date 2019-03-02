@@ -14,20 +14,24 @@ import { createStructuredSelector } from 'reselect';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 
+import CityContainer from '../CityContainer';
 import Country from '../../components/Country';
 import Heading from '../../components/Heading';
-import CityContainer from '../CityContainer';
 import { accordionDecorator } from '../AccordionDecorator';
 
 import saga from './saga';
 import reducer from './reducer';
-import { selectCitiesIDsListByCountry } from './selectors';
+import { initCities } from './actions';
 import { CitiesWrapper, Wrapper } from './Wrapper';
+import { selectCitiesIDsListByCountry } from './selectors';
 
 const CountryWrapper = accordionDecorator(Country);
 
-/* eslint-disable react/prefer-stateless-function */
 export class CitiesList extends React.Component {
+  componentDidMount() {
+    this.props.initCities();
+  }
+
   shouldComponentUpdate(newState) {
     if (newState && this.props && this.props.cities) {
       return !isEqual(newState.cities, this.props.cities);
@@ -58,13 +62,23 @@ export class CitiesList extends React.Component {
 
 CitiesList.propTypes = {
   cities: PropTypes.object,
+  initCities: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
   cities: selectCitiesIDsListByCountry(),
 });
 
-const withConnect = connect(mapStateToProps);
+function mapDispatchToProps(dispatch) {
+  return {
+    initCities: () => dispatch(initCities()),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
 
 const withReducer = injectReducer({ key: 'cities', reducer });
 const withSaga = injectSaga({ key: 'cities', saga });

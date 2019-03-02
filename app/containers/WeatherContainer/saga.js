@@ -15,7 +15,7 @@ function getFormatDates(day) {
 }
 
 export function* setNewWeatherSaga() {
-  const key = '69f5aa29f81e43eb83b99dba5042cefb';
+  const key = '0c4c3b583a2240eab53a899cb37d888a';
   const currDay = yield select(makeSelectDate());
   const id = yield select(selectCurrCity());
   try {
@@ -28,14 +28,14 @@ export function* setNewWeatherSaga() {
     const requestURL = `https://api.weatherbit.io/v2.0/history/daily?start_date=${dateStart}&end_date=${dateEnd}&key=${key}&lat=${lat}&lon=${lng}`;
 
     const { data } = yield call(request, requestURL);
-    const { temp, precip, wind_spd, rh } = data[0];
+    const { temp, precip, wind_spd: wind, rh } = data[0];
     yield put(
       setNewWeather({
         temp: parseInt(temp, 10),
         city,
         info: {
           precipitation: parseInt(precip, 10),
-          wind: parseInt(wind_spd, 10),
+          wind: parseInt(wind, 10),
           humidity: parseInt(rh, 10),
         },
       }),
