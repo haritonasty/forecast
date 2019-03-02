@@ -17,11 +17,14 @@ import injectReducer from 'utils/injectReducer';
 import Country from '../../components/Country';
 import Heading from '../../components/Heading';
 import CityContainer from '../CityContainer';
+import { accordionDecorator } from '../AccordionDecorator';
 
 import saga from './saga';
 import reducer from './reducer';
 import { selectCitiesIDsListByCountry } from './selectors';
 import { CitiesWrapper, Wrapper } from './Wrapper';
+
+const CountryWrapper = accordionDecorator(Country);
 
 /* eslint-disable react/prefer-stateless-function */
 export class CitiesList extends React.Component {
@@ -40,11 +43,11 @@ export class CitiesList extends React.Component {
         <Wrapper>
           <CitiesWrapper>
             {Object.keys(cities).map(country => (
-              <Country key={country} value={country}>
+              <CountryWrapper key={country} value={country}>
                 {Object.keys(cities[country]).map(cityId => (
                   <CityContainer key={cityId} id={cityId} />
                 ))}
-              </Country>
+              </CountryWrapper>
             ))}
           </CitiesWrapper>
         </Wrapper>
