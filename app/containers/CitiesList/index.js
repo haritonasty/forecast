@@ -6,6 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isEqual } from 'lodash';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -23,7 +24,14 @@ import { selectCitiesIDsListByCountry } from './selectors';
 import { CitiesWrapper, Wrapper } from './Wrapper';
 
 /* eslint-disable react/prefer-stateless-function */
-export class CitiesList extends React.PureComponent {
+export class CitiesList extends React.Component {
+  shouldComponentUpdate(newState) {
+    if (newState && this.props && this.props.cities) {
+      return !isEqual(newState.cities, this.props.cities);
+    }
+    return true;
+  }
+
   render() {
     const { cities } = this.props;
     return (
