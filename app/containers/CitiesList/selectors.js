@@ -26,5 +26,23 @@ const selectCurrCityInfo = id =>
     citiesState.getIn(['citiesList', id]).toJS(),
   );
 
+const selectCityInfo = (state, props) =>
+  state.getIn(['cities', 'citiesList', props.id]).toJS();
+
+const selectCitiesIDsListByCountry = () =>
+  createSelector(selectCity, cities =>
+    cities
+      .get('citiesList')
+      .map(city => city.get('country'))
+      .groupBy(x => x)
+      .toJS(),
+  );
+
 export default selectCity;
-export { selectCitiesList, selectCurrCity, selectCurrCityInfo };
+export {
+  selectCitiesList,
+  selectCurrCity,
+  selectCurrCityInfo,
+  selectCityInfo,
+  selectCitiesIDsListByCountry,
+};

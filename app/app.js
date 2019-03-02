@@ -34,10 +34,10 @@ import configureStore from './configureStore';
 // Import i18n messages
 import { translationMessages } from './i18n';
 
-const openSansObserver = new FontFaceObserver('Open Sans', {});
+const montserratObserver = new FontFaceObserver('Montserrat', {});
 
 // When Open Sans is loaded, add a font-family using Open Sans to the body
-openSansObserver.load().then(() => {
+montserratObserver.load().then(() => {
   document.body.classList.add('fontLoaded');
 });
 
