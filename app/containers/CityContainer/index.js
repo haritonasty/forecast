@@ -14,7 +14,13 @@ import City from '../../components/City';
 import { changeCurrentCity, removeCity } from '../CitiesList/actions';
 import { selectCityInfo, selectCurrCity } from '../CitiesList/selectors';
 
-export class CityContainer extends React.PureComponent {
+export class CityContainer extends React.Component {
+  shouldComponentUpdate(newState) {
+    const isCurrentNow = this.props.id === this.props.currentCity;
+    const isCurrentAfter = this.props.id === newState.currentCity;
+    return !(isCurrentNow === isCurrentAfter);
+  }
+
   handleChangeCity = () => {
     if (this.props.id === this.props.currentCity) return undefined;
     return this.props.changeCurrentCity(this.props.id);
