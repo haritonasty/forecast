@@ -1,11 +1,11 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import CalendarIcon from '../index';
+import CalendarIcon from '../index';
 
 describe('<CalendarIcon />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render a SVG', () => {
+    const renderedComponent = shallow(<CalendarIcon />);
+    expect(renderedComponent.find('svg')).toHaveLength(1);
   });
 });

@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 import { colorTheme, fontSize, fontWeight } from '../../utils/style';
 
-const StyledCountry = styled.button`
+export const StyledCountry = styled.button`
   padding: 3px 5px;
   font-family: inherit;
   font-weight: ${fontWeight.default};

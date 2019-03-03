@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Country /> should not render children 1`] = `
+<button
+  className="Country__StyledCountry-tfl0yw-0 jAVkNj"
+  open={false}
+  title="Show cities"
+>
+  Russia
+</button>
+`;
+
+exports[`<Country /> should render children 1`] = `
+Array [
+  <button
+    className="Country__StyledCountry-tfl0yw-0 fjFMzj"
+    open={true}
+    title="Hide cities"
+  >
+    Russia
+  </button>,
+  "Russia",
+]
+`;

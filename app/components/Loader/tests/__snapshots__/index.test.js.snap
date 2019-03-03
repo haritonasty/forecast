@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> should match the snapshot 1`] = `
+.c2 {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #4285f4;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 60px;
+  width: 100%;
+}
+
+.c0 > .c1 {
+  margin: 2px;
+  -webkit-animation: gsZCoC 500ms infinite alternate;
+  animation: gsZCoC 500ms infinite alternate;
+}
+
+.c0 > .c1:nth-child(2) {
+  background: #ea4335;
+  -webkit-animation-delay: 125ms;
+  animation-delay: 125ms;
+}
+
+.c0 > .c1:nth-child(3) {
+  background: #fbbc05;
+  -webkit-animation-delay: 250ms;
+  animation-delay: 250ms;
+}
+
+.c0 > .c1:nth-child(4) {
+  background: #34a853;
+  -webkit-animation-delay: 375ms;
+  animation-delay: 375ms;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 c2"
+  />
+  <div
+    className="c1 c2"
+  />
+  <div
+    className="c1 c2"
+  />
+  <div
+    className="c1 c2"
+  />
+</div>
+`;

@@ -5,36 +5,15 @@
  */
 
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Circle, { bouncingLoader } from './Circle';
+import { colors } from './colors';
+import Wrapper from './Wrapper';
 
-const colors = {
-  blue: '#4285f4',
-  red: '#ea4335',
-  yellow: '#fbbc05',
-  green: '#34a853',
-};
-
-const bouncingLoader = keyframes`
-  to {
-    transform: translate3d(0, -1rem, 0);
-  }
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  width: 100%;
-  
-  
-  & > div {
-    width: 7px;
-    height: 7px;
+const StyledWrapper = styled(Wrapper)`
+  & > ${Circle} {
     margin: 2px;
-    background: ${colors.blue};
-    border-radius: 50%;
     animation: ${bouncingLoader} 500ms infinite alternate;
     
     &:nth-child(2) {
@@ -57,12 +36,12 @@ const Wrapper = styled.div`
 
 function Loader({ className }) {
   return (
-    <Wrapper className={className}>
-      <div />
-      <div />
-      <div />
-      <div />
-    </Wrapper>
+    <StyledWrapper className={className}>
+      <Circle />
+      <Circle />
+      <Circle />
+      <Circle />
+    </StyledWrapper>
   );
 }
 

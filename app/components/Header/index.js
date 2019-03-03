@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import DateContainer from '../../containers/DateContainer';
 import { fontSize } from '../../utils/style';
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
   width: 100%;
   margin: 0;
   padding: 0 10px;

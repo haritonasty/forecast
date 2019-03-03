@@ -1,11 +1,12 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import renderer from 'react-test-renderer';
+import 'jest-styled-components';
 
-// import Loader from '../index';
+import Loader from '../index';
 
 describe('<Loader />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should match the snapshot', () => {
+    const renderedComponent = renderer.create(<Loader />).toJSON();
+    expect(renderedComponent).toMatchSnapshot();
   });
 });

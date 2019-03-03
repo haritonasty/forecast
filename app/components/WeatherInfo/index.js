@@ -51,27 +51,31 @@ function WeatherInfo({ info }) {
         <WrapperIcon>
           <HumidityIcon />
         </WrapperIcon>
-        <Value>{info.humidity}%</Value>
+        {info && <Value>{info.humidity}%</Value>}
       </Item>
       <Item>
         <Name>Wind</Name>
         <WrapperIcon>
           <WindIcon />
         </WrapperIcon>
-        <Value>
-          {info.wind}
-          m/s
-        </Value>
+        {info && (
+          <Value>
+            {info.wind}
+            m/s
+          </Value>
+        )}
       </Item>
       <Item>
         <Name>Precipitation</Name>
         <WrapperIcon>
           <PrecipitationIcon />
         </WrapperIcon>
-        <Value>
-          {info.precipitation}
-          mm
-        </Value>
+        {info && (
+          <Value>
+            {info.precipitation}
+            mm
+          </Value>
+        )}
       </Item>
     </List>
   );

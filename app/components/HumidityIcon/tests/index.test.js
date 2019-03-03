@@ -1,11 +1,11 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import HumidityIcon from '../index';
+import HumidityIcon from '../index';
 
 describe('<HumidityIcon />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render a SVG', () => {
+    const renderedComponent = shallow(<HumidityIcon />);
+    expect(renderedComponent.find('svg')).toHaveLength(1);
   });
 });
