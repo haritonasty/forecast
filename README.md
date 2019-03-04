@@ -1,5 +1,8 @@
 ## Weather forecast React App
 
+[![Build Status](https://travis-ci.com/haritonasty/forecast.svg?token=B58U9iPoxqXxExhvJm4a&branch=develop)](https://travis-ci.com/haritonasty/forecast)
+
+
 ### Запуск:
 ```
 npm install
