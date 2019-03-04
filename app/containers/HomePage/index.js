@@ -17,13 +17,13 @@ import SearchCitiesContainer from '../SearchCitiesContainer';
 import WeatherContainer from '../WeatherContainer';
 import CitiesList from '../CitiesList';
 
-const StyledHeader = styled(Header)``;
+export const StyledHeader = styled(Header)``;
 
-const SideBar = styled.div``;
+export const SideBar = styled.aside``;
 
-const Main = styled.div``;
+export const Main = styled.main``;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: grid;
   grid-template-areas: 'sidebar header' 'sidebar main';
   height: 600px;

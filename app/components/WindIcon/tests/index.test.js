@@ -1,11 +1,11 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import WindIcon from '../index';
+import WindIcon from '../index';
 
 describe('<WindIcon />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render a SVG', () => {
+    const renderedComponent = shallow(<WindIcon />);
+    expect(renderedComponent.find('svg')).toHaveLength(1);
   });
 });

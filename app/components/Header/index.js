@@ -12,7 +12,7 @@ import { fontSize } from '../../utils/style';
 
 import DateContainer from '../../containers/DateContainer';
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
   width: 100%;
   margin: 0;
   padding: 0 10px;

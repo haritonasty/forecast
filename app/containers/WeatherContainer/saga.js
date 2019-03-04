@@ -3,7 +3,7 @@ import request from 'utils/request';
 import format from 'date-fns/format';
 import { addDays } from 'date-fns';
 import { CHANGE_CURRENT_CITY } from '../CitiesList/constants';
-import { selectCurrCity, selectCurrCityInfo } from '../CitiesList/selectors';
+import { selectCurrCity, selectCityInfo } from '../CitiesList/selectors';
 import { CHANGE_DATE } from '../DateContainer/constants';
 import makeSelectDate from '../DateContainer/selectors';
 import { finishLoadWeather, loadWeather, setNewWeather } from './actions';
@@ -20,7 +20,9 @@ export function* setNewWeatherSaga() {
   const id = yield select(selectCurrCity());
   try {
     if (!id) throw new Error("City didn't selected");
-    const { lat, lng, city } = yield select(selectCurrCityInfo(id));
+    const { lat, lng, city } = yield select(state =>
+      selectCityInfo(state, { id }),
+    );
     if (!lng || !lat) throw new Error("City didn't selected");
     yield put(loadWeather());
     if (!currDay) throw new Error("Day didn't selected");

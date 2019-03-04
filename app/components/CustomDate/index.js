@@ -12,7 +12,7 @@ import { colorTheme, fontSize, fontWeight } from '../../utils/style';
 
 import CalendarIcon from '../CalendarIcon';
 
-const Button = styled.button`
+export const Button = styled.button`
   font-weight: ${fontWeight.big};
   cursor: pointer;
   outline-color: ${colorTheme.base};

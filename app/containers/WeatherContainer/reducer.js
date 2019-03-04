@@ -9,7 +9,6 @@ import { SET_NEW_WEATHER, WEATHER_LOADED, WEATHER_LOADING } from './constants';
 
 export const initialState = fromJS({
   temp: null,
-  type: 'Celsius',
   info: {
     wind: null,
     precipitation: null,
