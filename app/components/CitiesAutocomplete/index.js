@@ -8,18 +8,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import PlacesAutocomplete from 'react-places-autocomplete';
+
 import { colorTheme, fontSize } from '../../utils/style';
+
 import SearchIcon from '../SearchIcon';
 
 const searchOnlyCities = { types: ['(cities)'] };
 
 const AutocompleteContainer = styled.div`
-  width: 100%;
-  position: relative;
-  margin-bottom: 30px;
-`;
-
-const WrapperInput = styled.div`
   width: 100%;
   position: relative;
 `;
@@ -30,6 +26,15 @@ const WrapperIcon = styled.div`
   position: absolute;
   top: 10px;
   left: 20px;
+  opacity: 0.8;
+`;
+
+const WrapperInput = styled.div`
+  width: 100%;
+  position: relative;
+  &:hover ${WrapperIcon} {
+    opacity: 1;
+  }
 `;
 
 const Suggestion = styled.div`
@@ -47,7 +52,7 @@ const Input = styled.input`
   min-height: 50px;
   outline: none;
   border: none;
-  border-bottom: 1px solid ${colorTheme.border};
+  border-bottom: 2px solid ${colorTheme.border};
   color: inherit;
   font-size: ${fontSize.medium}px;
   font-family: inherit;
@@ -55,6 +60,9 @@ const Input = styled.input`
   width: 100%;
   position: relative;
   align-self: center;
+  &:focus {
+    border-bottom: 2px solid ${colorTheme.primary};
+  }
 
   &::placeholder {
     color: inherit;

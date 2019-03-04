@@ -7,13 +7,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { colorTheme, fontSize, fontWeight } from '../../utils/style';
+
 import CalendarIcon from '../CalendarIcon';
 
 export const Button = styled.button`
   font-weight: ${fontWeight.big};
   cursor: pointer;
-  outline-color: ${colorTheme.primary};
+  outline-color: ${colorTheme.base};
   padding: 4px 10px;
   font-size: ${fontSize.medium}px;
   display: flex;

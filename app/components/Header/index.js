@@ -7,8 +7,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
-import DateContainer from '../../containers/DateContainer';
+
 import { fontSize } from '../../utils/style';
+
+import DateContainer from '../../containers/DateContainer';
 
 export const StyledHeader = styled.header`
   width: 100%;

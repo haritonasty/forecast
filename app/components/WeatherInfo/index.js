@@ -7,10 +7,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+
 import { fontSize } from '../../utils/style';
+
+import WindIcon from '../WindIcon';
 import HumidityIcon from '../HumidityIcon';
 import PrecipitationIcon from '../PrecipitationIcon';
-import WindIcon from '../WindIcon';
 
 const List = styled.ul`
   margin: 0;

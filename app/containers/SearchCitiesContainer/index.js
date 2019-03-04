@@ -6,25 +6,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { compose } from 'redux';
 
-import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
+import injectReducer from 'utils/injectReducer';
 import CitiesAutocomplete from '../../components/CitiesAutocomplete';
-import { initCities } from '../CitiesList/actions';
-import { changeAddress, getCityInfo, wasError } from './actions';
-import { selectError, selectFoundCity } from './selectors';
-import reducer from './reducer';
+
 import saga from './saga';
+import reducer from './reducer';
+import { selectError, selectFoundCity } from './selectors';
+import { changeAddress, getCityInfo, wasError } from './actions';
 
-/* eslint-disable react/prefer-stateless-function */
 export class SearchCitiesContainer extends React.PureComponent {
-  componentDidMount() {
-    this.props.initCities();
-  }
-
   render() {
     return (
       <CitiesAutocomplete
@@ -41,7 +36,6 @@ export class SearchCitiesContainer extends React.PureComponent {
 SearchCitiesContainer.propTypes = {
   address: PropTypes.string,
   error: PropTypes.string,
-  initCities: PropTypes.func,
   onSelectCity: PropTypes.func,
   onChangeAddress: PropTypes.func,
   handleError: PropTypes.func,
@@ -54,7 +48,6 @@ const mapStateToProps = createStructuredSelector({
 
 function mapDispatchToProps(dispatch) {
   return {
-    initCities: () => dispatch(initCities()),
     onSelectCity: city => dispatch(getCityInfo(city)),
     handleError: err => dispatch(wasError(err)),
     onChangeAddress: address => dispatch(changeAddress(address)),

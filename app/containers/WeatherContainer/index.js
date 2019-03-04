@@ -6,18 +6,20 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+import { createStructuredSelector } from 'reselect';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import styled from 'styled-components';
+
 import Weather from '../../components/Weather';
 import WeatherInfo from '../../components/WeatherInfo';
-import makeSelectWeather from './selectors';
-import reducer from './reducer';
+
 import saga from './saga';
+import reducer from './reducer';
+import makeSelectWeather from './selectors';
 
 const StyledWeather = styled(Weather)``;
 
@@ -28,7 +30,6 @@ const Wrapper = styled.div`
   }
 `;
 
-/* eslint-disable react/prefer-stateless-function */
 export class WeatherContainer extends React.PureComponent {
   render() {
     const { city, temp, info, isLoading } = this.props.weather;
