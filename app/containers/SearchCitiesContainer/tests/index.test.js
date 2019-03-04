@@ -6,8 +6,25 @@ import { changeAddress, getCityInfo, wasError } from '../actions';
 
 describe('<SearchCitiesContainer />', () => {
   it('should render the <CitiesAutocomplete /> component', () => {
-    const renderedComponent = shallow(<SearchCitiesContainer />);
-    expect(renderedComponent.contains(<CitiesAutocomplete />)).toEqual(true);
+    const props = {
+      address: 'moscow',
+      onChangeAddress: () => {},
+      onSelectCity: () => {},
+      handleError: () => {},
+      error: '',
+    };
+    const renderedComponent = shallow(<SearchCitiesContainer {...props} />);
+    expect(
+      renderedComponent.contains(
+        <CitiesAutocomplete
+          address={props.address}
+          onChange={props.onChangeAddress}
+          onSelect={props.onSelectCity}
+          onError={props.handleError}
+          error={props.error}
+        />,
+      ),
+    ).toEqual(true);
   });
 
   describe('mapDispatchToProps', () => {
