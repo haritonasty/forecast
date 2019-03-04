@@ -1,8 +1,7 @@
 ## Weather forecast React App
 
 [![Build Status](https://travis-ci.com/haritonasty/forecast.svg?token=B58U9iPoxqXxExhvJm4a&branch=develop)](https://travis-ci.com/haritonasty/forecast)
-
-
+[![Coverage Status](https://coveralls.io/repos/github/haritonasty/forecast/badge.svg?branch=configure-future-badges&t=VzvIPZ)](https://coveralls.io/github/haritonasty/forecast?branch=develop)
 ### Запуск:
 ```
 npm install
@@ -35,7 +34,7 @@ npm run start
 
 
 
-### Трудности
+###  🤔 Трудности:
 1. Не разобралась, как записать в redux store (через Immutable) не Map/List, а примитивный тип. Чтобы избежать конструкций вида `date: { date: '' }`. Видимо не предусматривается, что подхранилище - примитивный тип?
 3. Не удалось полностью исключить верстку в `containers/`  для оберток в основном.
 4. Получились на мой взгляд очень раздутые саги, не придумала, как это можно улучшить.
