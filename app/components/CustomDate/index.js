@@ -23,7 +23,7 @@ export const Button = styled.button`
   justify-content: space-between;
 `;
 
-const WrapperIcon = styled.div`
+export const WrapperIcon = styled.div`
   width: 25px;
   height: 25px;
   margin-right: 10px;

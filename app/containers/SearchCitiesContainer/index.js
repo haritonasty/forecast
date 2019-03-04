@@ -46,7 +46,7 @@ const mapStateToProps = createStructuredSelector({
   error: selectError(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     onSelectCity: city => dispatch(getCityInfo(city)),
     handleError: err => dispatch(wasError(err)),

@@ -53,7 +53,7 @@ const mapStateToProps = createStructuredSelector({
   date: makeSelectDate(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     onChange: date => dispatch(changeDate(date)),
   };

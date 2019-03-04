@@ -25,7 +25,7 @@ import { initCities } from './actions';
 import { CitiesWrapper, Wrapper } from './Wrapper';
 import { selectCitiesIDsListByCountry } from './selectors';
 
-const CountryWrapper = accordionDecorator(Country);
+export const CountryWrapper = accordionDecorator(Country);
 
 export class CitiesList extends React.Component {
   componentDidMount() {
@@ -69,7 +69,7 @@ const mapStateToProps = createStructuredSelector({
   cities: selectCitiesIDsListByCountry(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     initCities: () => dispatch(initCities()),
   };

@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 import { colorTheme, fontSize } from '../../utils/style';
 
-const StyledCity = styled.span`
+export const StyledCity = styled.span`
   display: block;
   width: 100%;
   background: none;
@@ -21,13 +21,13 @@ const StyledCity = styled.span`
   padding: 5px 10px;
 `;
 
-const DeleteButton = styled.span`
+export const DeleteButton = styled.span`
   background: none;
   border: none;
   cursor: pointer;
 `;
 
-const Wrapper = styled.button`
+export const Wrapper = styled.button`
   outline-color: ${colorTheme.primary};
   display: flex;
   align-items: center;

@@ -2,7 +2,7 @@ import { fromJS } from 'immutable';
 import { subDays } from 'date-fns';
 import { changeDate } from '../actions';
 
-import dateReducer from '../reducer';
+import dateReducer, { initialState } from '../reducer';
 
 describe('dateReducer', () => {
   let state;
@@ -11,8 +11,8 @@ describe('dateReducer', () => {
   });
 
   it('should return the initial state', () => {
-    const expectedResult = state;
-    expect(dateReducer(undefined, {})).toEqual(expectedResult);
+    // const expectedResult = state.get('date').toJS();
+    expect(dateReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle the changeDate action correctly', () => {

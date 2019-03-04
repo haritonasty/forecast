@@ -21,9 +21,9 @@ import saga from './saga';
 import reducer from './reducer';
 import makeSelectWeather from './selectors';
 
-const StyledWeather = styled(Weather)``;
+export const StyledWeather = styled(Weather)``;
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   width: 100%;
   ${StyledWeather} {
     margin: 0 0 100px;

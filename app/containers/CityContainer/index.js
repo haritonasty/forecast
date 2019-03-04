@@ -57,7 +57,7 @@ const mapStateToProps = createStructuredSelector({
   currentCity: selectCurrCity(),
 });
 
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
   return {
     changeCurrentCity: cityId => dispatch(changeCurrentCity(cityId)),
     removeCity: cityId => dispatch(removeCity(cityId)),
