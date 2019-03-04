@@ -1,11 +1,22 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
-
-// import { DateContainer } from '../index';
+import { mapDispatchToProps } from '../index';
+import { changeDate } from '../actions';
 
 describe('<DateContainer />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  describe('mapDispatchToProps', () => {
+    describe('onChange', () => {
+      it('should be injected', () => {
+        const dispatch = jest.fn();
+        const result = mapDispatchToProps(dispatch);
+        expect(result.onChange).toBeDefined();
+      });
+
+      it('should dispatch changeDate when called', () => {
+        const dispatch = jest.fn();
+        const result = mapDispatchToProps(dispatch);
+        const date = '11.11.11';
+        result.onChange(date);
+        expect(dispatch).toHaveBeenCalledWith(changeDate(date));
+      });
+    });
   });
 });

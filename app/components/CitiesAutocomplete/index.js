@@ -15,12 +15,12 @@ import SearchIcon from '../SearchIcon';
 
 const searchOnlyCities = { types: ['(cities)'] };
 
-const AutocompleteContainer = styled.div`
+export const AutocompleteContainer = styled.div`
   width: 100%;
   position: relative;
 `;
 
-const WrapperIcon = styled.div`
+export const WrapperIcon = styled.div`
   width: 25px;
   height: 25px;
   position: absolute;
@@ -29,7 +29,7 @@ const WrapperIcon = styled.div`
   opacity: 0.8;
 `;
 
-const WrapperInput = styled.div`
+export const WrapperInput = styled.div`
   width: 100%;
   position: relative;
   &:hover ${WrapperIcon} {
@@ -37,7 +37,7 @@ const WrapperInput = styled.div`
   }
 `;
 
-const Suggestion = styled.div`
+export const Suggestion = styled.div`
   padding: 8px;
   text-align: left;
   color: ${colorTheme.baseInvert};
@@ -47,7 +47,7 @@ const Suggestion = styled.div`
   }
 `;
 
-const Input = styled.input`
+export const Input = styled.input`
   background: transparent;
   min-height: 50px;
   outline: none;
@@ -70,7 +70,7 @@ const Input = styled.input`
   }
 `;
 
-const DropDownContainer = styled.div`
+export const DropDownContainer = styled.div`
   position: absolute;
   top: 100%;
   left: 0;
