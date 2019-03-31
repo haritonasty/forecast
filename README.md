@@ -21,6 +21,8 @@
 #### [Смотреть демо без локальной установки](https://forecast-csssr.firebaseapp.com/)
 
 ### Запуск
+
+Использую node 10.15.3, npm 6.4.1
 ```
 npm install
 npm run start
