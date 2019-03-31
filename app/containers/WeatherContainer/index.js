@@ -25,8 +25,17 @@ export const StyledWeather = styled(Weather)``;
 
 export const Wrapper = styled.div`
   width: 100%;
+  @media (max-width: 700px) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   ${StyledWeather} {
     margin: 0 0 100px;
+    @media (max-width: 700px) {
+      margin: 0;
+    }
   }
 `;
 

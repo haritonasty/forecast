@@ -22,7 +22,7 @@ import { accordionDecorator } from '../AccordionDecorator';
 import saga from './saga';
 import reducer from './reducer';
 import { initCities } from './actions';
-import { CitiesWrapper, Wrapper } from './Wrapper';
+import { CitiesWrapper, Wrapper, Container } from './Wrapper';
 import { selectCitiesIDsListByCountry } from './selectors';
 
 export const CountryWrapper = accordionDecorator(Country);
@@ -42,7 +42,7 @@ export class CitiesList extends React.Component {
   render() {
     const { cities } = this.props;
     return (
-      <>
+      <Container>
         <Heading>favorites cities</Heading>
         <Wrapper>
           <CitiesWrapper>
@@ -55,7 +55,7 @@ export class CitiesList extends React.Component {
             ))}
           </CitiesWrapper>
         </Wrapper>
-      </>
+      </Container>
     );
   }
 }

@@ -21,6 +21,9 @@ export function* getCityInfoSaga({ city }) {
       yield put(addNewCity(id, { id, city: cityName, country, lat, lng }));
       yield put(changeCurrentCity(id));
       yield put(changeAddress(''));
+    } else {
+      yield put(changeCurrentCity(id));
+      yield put(changeAddress(''));
     }
   } catch (err) {
     console.log(err);

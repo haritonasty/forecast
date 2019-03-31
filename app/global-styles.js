@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   body.fontLoaded {
     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: ${colorTheme.base};
-    min-width: 760px;
   }
 
   #app {

@@ -22,6 +22,9 @@ const List = styled.ul`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  @media (max-width: 700px) {
+    justify-content: space-around;
+  }
 `;
 
 const Item = styled.li`

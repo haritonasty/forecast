@@ -27,3 +27,10 @@ export const CitiesWrapper = styled.div`
   flex-direction: column;
   align-items: baseline;
 `;
+
+export const Container = styled.div`
+  width: 100%;
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
