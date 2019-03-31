@@ -48,6 +48,15 @@ exports[`<WeatherInfo /> should match the snapshot 1`] = `
   margin: 20px 0;
 }
 
+@media (max-width:700px) {
+  .c0 {
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+  }
+}
+
 <ul
   className="c0"
 >
@@ -170,6 +179,15 @@ exports[`<WeatherInfo /> should match the snapshot with info 1`] = `
   width: 40px;
   height: 40px;
   margin: 20px 0;
+}
+
+@media (max-width:700px) {
+  .c0 {
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+  }
 }
 
 <ul
