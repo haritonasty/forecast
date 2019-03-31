@@ -5,7 +5,7 @@ Object {
   "@@redux-saga/IO": true,
   "CALL": Object {
     "args": Array [
-      "/api",
+      "https://us-central1-forecast-csssr.cloudfunctions.net/getCities",
     ],
     "context": null,
     "fn": [Function],

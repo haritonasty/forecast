@@ -1,0 +1,54 @@
+{
+  "citiesList": {
+    "ChIJybDUc_xKtUYRTM9XV8zWRD0": {
+      "id": "ChIJybDUc_xKtUYRTM9XV8zWRD0",
+      "city": "Moscow",
+      "country": "Russia",
+      "lat": 55.755826,
+      "lng": 37.617299900000035
+    },
+    "ChIJ85rxeAkaMkERJJS_DFuVubA": {
+      "id": "ChIJ85rxeAkaMkERJJS_DFuVubA",
+      "city": "Oryol",
+      "country": "Russia",
+      "lat": 52.9668468,
+      "lng": 36.06248979999998
+    },
+    "ChIJ4V7zUzmgj4ARbWqqC5t75Lg": {
+      "id": "ChIJ4V7zUzmgj4ARbWqqC5t75Lg",
+      "city": "Redwood City",
+      "country": "USA",
+      "lat": 37.48521520000001,
+      "lng": -122.23635480000002
+    },
+    "ChIJS5dFe_cZTIYRj2dH9qSb7Lk": {
+      "id": "ChIJS5dFe_cZTIYRj2dH9qSb7Lk",
+      "city": "Dallas",
+      "country": "USA",
+      "lat": 32.7766642,
+      "lng": -96.79698789999998
+    },
+    "ChIJ99w3UxmgQUARXPyB3DOedQo": {
+      "id": "ChIJ99w3UxmgQUARXPyB3DOedQo",
+      "city": "Dsegh",
+      "country": "Armenia",
+      "lat": 40.96012959999999,
+      "lng": 44.64946090000001
+    },
+    "ChIJqUbp2koHx0cRo-Cmczf5-jQ": {
+      "id": "ChIJqUbp2koHx0cRo-Cmczf5-jQ",
+      "city": "Ewijk",
+      "country": "Netherlands",
+      "lat": 51.86998699999999,
+      "lng": 5.737457899999981
+    },
+    "ChIJdR3LEAHKJIgR0sS5NU6Gdlc": {
+      "id": "ChIJdR3LEAHKJIgR0sS5NU6Gdlc",
+      "city": "Detroit",
+      "country": "USA",
+      "lat": 42.331427,
+      "lng": -83.0457538
+    }
+  },
+  "currentCity": "ChIJdR3LEAHKJIgR0sS5NU6Gdlc"
+}
