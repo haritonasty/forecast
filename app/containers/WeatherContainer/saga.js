@@ -15,7 +15,7 @@ function getFormatDates(day) {
 }
 
 export function* setNewWeatherSaga() {
-  const key = '0c4c3b583a2240eab53a899cb37d888a';
+  const key = 'ae79e9b690c24949bd6d8d22448e2435';
   const currDay = yield select(makeSelectDate());
   const id = yield select(selectCurrCity());
   try {

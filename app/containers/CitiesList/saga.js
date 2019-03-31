@@ -5,7 +5,10 @@ import { INIT_CITIES } from './constants';
 
 export function* initCities() {
   try {
-    const { citiesList, currentCity } = yield call(request, `/api`);
+    const { citiesList, currentCity } = yield call(
+      request,
+      `https://us-central1-forecast-csssr.cloudfunctions.net/getCities`,
+    );
     yield put(initCitiesList(citiesList));
     yield put(changeCurrentCity(currentCity));
   } catch (err) {
