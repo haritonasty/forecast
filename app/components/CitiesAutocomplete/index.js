@@ -79,6 +79,7 @@ export const DropDownContainer = styled.div`
   border: 1px solid ${colorTheme.border};
   border-top: none;
   border-bottom: none;
+  z-index: 5;
 
   ${Suggestion} {
     border-bottom: 1px solid ${colorTheme.border};
